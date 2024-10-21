@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      <strong><em>Carlos Ushiña</em></strong>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,79 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Carlos Ushiña</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-img
+    class="cv-img"
+    src="../../assets/img/fcu.jpg"
+    alt="Carlos Ushiña foto de CV"
+  ></ion-img>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="4">
+        <ion-icon class="icon-text-col" src="../../assets/icon/celular.svg"></ion-icon>
+        <strong><em>+593979309501</em></strong>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-icon class="icon-text-col" src="../../assets/icon/correo.svg"></ion-icon>
+        <strong><em>carlos.ushina&#64;epn.edu.ec</em></strong>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-icon class="icon-text-col" src="../../assets/icon/ubicacion.svg"></ion-icon>
+        <strong><em>Cerca de tu corazón, Quito</em></strong>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-title>
+    <strong><em>Habilidades</em></strong>
+  </ion-title>
+  <ion-list [inset]="true">
+    <ion-item *ngFor="let habilidad of habilidades">
+      <ion-label>{{ habilidad }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-title>
+    <strong><em>Conocimientos</em></strong>
+  </ion-title>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Tecnologías</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let tecnologia of tecnologias">
+          <ion-label>{{ tecnologia }}</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-card-title><strong><em>Idiomas</em></strong></ion-card-title>
+
+      <h6>Español</h6>
+      <ion-progress-bar value=".95"></ion-progress-bar>
+      <h6>Lenguaje de Señas</h6>
+      <ion-progress-bar value=".80"></ion-progress-bar>
+      <h6>Inglés</h6>
+      <ion-progress-bar value=".65"></ion-progress-bar>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title><strong><em>Educación</em></strong></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let educacion of educaciones">
+      <ion-label>
+        <h2>{{ educacion.institucion }}</h2>
+        <p>{{ educacion.descripcion }}</p>
+        <p>{{ educacion.ubicacion }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
